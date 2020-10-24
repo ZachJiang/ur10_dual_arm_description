@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="soft_gripper_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0101818064717183 -0.0127382974216322 -0.0235948079247732"
+        rpy="0 0 0" />
+      <mass
+        value="0.166487067062824" />
+      <inertia
+        ixx="0.000205892094149779"
+        ixy="-2.76998990995221E-07"
+        ixz="-4.67205526690874E-06"
+        iyy="0.00012611063602766"
+        iyz="-1.71156395001428E-06"
+        izz="0.000200197848786911" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ur10_dual_arm_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ur10_dual_arm_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="softtip_Link">
+    <inertial>
+      <origin
+        xyz="0.0337608717522361 -0.000389502378510501 -0.0580526190121379"
+        rpy="0 0 0" />
+      <mass
+        value="0.0439917824416341" />
+      <inertia
+        ixx="6.43540108852024E-05"
+        ixy="-1.10623023521578E-10"
+        ixz="7.89752274420368E-06"
+        iyy="7.18449838412656E-05"
+        iyz="-4.69164269498556E-11"
+        izz="1.14933370210076E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ur10_dual_arm_description/meshes/softtip_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ur10_dual_arm_description/meshes/softtip_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="soft_gripper_joint"
+    type="fixed">
+    <origin
+      xyz="-0.014744 -0.06261 -0.1348"
+      rpy="3.1416 -0.058108 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="softtip_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
