@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="soft hybrid gripper URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000176879397903153 0.0171745476796605 0.00798016750513526"
+        rpy="0 0 0" />
+      <mass
+        value="0.117842634947847" />
+      <inertia
+        ixx="0.000366414508469255"
+        ixy="1.72345228700625E-05"
+        ixz="6.18123429105568E-06"
+        iyy="6.80036131268536E-05"
+        iyz="-2.47128778299121E-05"
+        izz="0.000409756967424389" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rigid_link">
+    <inertial>
+      <origin
+        xyz="0.00246082393825808 0.00389924820387103 0.0131191901389871"
+        rpy="0 0 0" />
+      <mass
+        value="0.0445322519868914" />
+      <inertia
+        ixx="1.52433784006711E-05"
+        ixy="5.80078149789572E-09"
+        ixz="-1.18934068666226E-06"
+        iyy="1.3594081592835E-05"
+        iyz="6.27237025112029E-08"
+        izz="6.46351202019257E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/rigid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/rigid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rigid_rev_joint"
+    type="revolute">
+    <origin
+      xyz="-0.018 0.0604 0.031"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rigid_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="rigid_tip_link">
+    <inertial>
+      <origin
+        xyz="0.00774095772540574 -0.000850000000000101 -0.0611318896625747"
+        rpy="0 0 0" />
+      <mass
+        value="0.0134476259243688" />
+      <inertia
+        ixx="4.91541805903652E-06"
+        ixy="-3.45478559862873E-21"
+        ixz="8.62881671033877E-07"
+        iyy="4.67899851023964E-06"
+        iyz="-2.20620740059224E-20"
+        izz="1.28227238645747E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/rigid_tip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/rigid_tip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rigid_tip_joint"
+    type="continuous">
+    <origin
+      xyz="0.029389 -0.00085 0.11906"
+      rpy="0 -0.13252 -3.1416" />
+    <parent
+      link="rigid_link" />
+    <child
+      link="rigid_tip_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="soft_tip_link">
+    <inertial>
+      <origin
+        xyz="-0.0672819098084754 -5.77278610192078E-08 -0.00123656065002749"
+        rpy="0 0 0" />
+      <mass
+        value="0.0267549348618611" />
+      <inertia
+        ixx="2.96189216662522E-06"
+        ixy="6.273448191828E-11"
+        ixz="-5.21931039474125E-06"
+        iyy="3.93840137119762E-05"
+        iyz="-4.51104709728545E-12"
+        izz="3.84440209403678E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/soft_tip_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://soft hybrid gripper URDF/meshes/soft_tip_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="soft_tip_joint"
+    type="fixed">
+    <origin
+      xyz="0.11681 0.061 0.098742"
+      rpy="0 -0.66549 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="soft_tip_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
